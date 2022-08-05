@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
+const cors=require("cors");
+
+
 // Routes File
 
 const AuthRoute = require('./routes/auth')
@@ -21,7 +24,7 @@ db.on("error", (err) => {
 
   const app = express();
 
-// app.use(cors())
+app.use(cors())
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
