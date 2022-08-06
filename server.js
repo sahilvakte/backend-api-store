@@ -9,6 +9,7 @@ const cors=require("cors");
 // Routes File
 
 const AuthRoute = require('./routes/auth')
+const AddprodRoute = require('./routes/prodauth')
 
 mongoose.connect("mongodb://localhost:27017/storeapi", {useNewUrlParser: true,
 useUnifiedTopology: true,})
@@ -36,3 +37,4 @@ app.listen(PORT, () => {
   });
 
   app.use('/api',AuthRoute)
+  app.use('/prodapi',AddprodRoute)
