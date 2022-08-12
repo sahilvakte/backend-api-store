@@ -14,6 +14,10 @@ const UserSchema = new Schema({
      price :{
         type : String
     },
+    userId:{
+        type:mongoose.Schema.Types.ObjectId,       //To store id of user
+        ref:'User'
+    }
 },{timestamps:true})
 
 const Products = mongoose.model('Products',UserSchema)

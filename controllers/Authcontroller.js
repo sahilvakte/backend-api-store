@@ -65,7 +65,7 @@ const register = (req, res, next) => {
             // if comapre match login success and creates a token
 
             if (result) {
-              let token = jwt.sign({ _id: user._id }, "AzQ,PI)0(", {
+              let token = jwt.sign({ id: user._id }, "AzQ,PI)0(", {
                 expiresIn: "1h",
               }); //{expiresIn:'1h'} time for login
               res.json({
@@ -91,7 +91,34 @@ const register = (req, res, next) => {
     );
   };
 
+
+  // JWT VERIFICATION
+
+  const verifytoken = async (req, res, next) => {
+    try {
+      const verifyTok = req.body.token;
+  
+      if (verifyTok) {
+        jwt.verify(verifyTok, "AzQ,PI)0(", function (err, result) {
+          if (err) {
+            console.log("err", err);
+          }
+          console.log("result", result);
+        });
+      }else{
+        console.log("Token is required");
+      }
+    } catch (err) {
+      console.log("err at try-catch block", err);
+      return res.json({
+        message: "An Error Occured",
+      });
+    }
+  };
+
   module.exports = {
     register,
-    login
-  };
+    login,
+    verifytoken,
+
+  }

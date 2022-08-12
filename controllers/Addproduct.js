@@ -1,7 +1,6 @@
 const Products = require("../models/products")
 const bcrypt = require("bcryptjs");
 
-
 const addproducts = (req, res, next) => {
 
   
@@ -11,6 +10,7 @@ const addproducts = (req, res, next) => {
         desc: req.body.desc,
         category: req.body.category,
         price: req.body.price,
+        // userId:
       });
 
       products
