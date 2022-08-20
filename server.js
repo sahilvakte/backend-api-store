@@ -40,3 +40,8 @@ app.listen(PORT, () => {
   app.use('/api',AuthRoute)
   app.use('/prodapi',AddprodRoute)
   app.use('/customerapi',CustomerController)
+
+
+  let arr = [{ id: 1, username: 'fred' }, { id: 2, username: 'bill' }, { id: 3, username: 'ted' }];
+  let found = arr.some(ele => ele.username === 'bdill');
+  console.log("found",found)
