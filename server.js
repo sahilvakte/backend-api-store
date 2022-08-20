@@ -10,6 +10,7 @@ const cors=require("cors");
 
 const AuthRoute = require('./routes/auth')
 const AddprodRoute = require('./routes/prodauth')
+const CustomerController = require('./routes/customerauth')
 
 mongoose.connect("mongodb://localhost:27017/storeapi", {useNewUrlParser: true,
 useUnifiedTopology: true,})
@@ -38,3 +39,4 @@ app.listen(PORT, () => {
 
   app.use('/api',AuthRoute)
   app.use('/prodapi',AddprodRoute)
+  app.use('/customerapi',CustomerController)
