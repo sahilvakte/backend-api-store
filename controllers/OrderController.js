@@ -1,23 +1,35 @@
-const Customer = require("../models/customer");
+const Order = require("../models/orderModel");
 const bcrypt = require("bcryptjs");
+
 
 // REGISTRATION
 
-const addcustomer = (req, res, next) => {
+const addorder = (req, res, next) => {
+
+  
  
-  let customer = new Customer({
+  let order = new Order({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     customeremail: req.body.customeremail,
     customerphone: req.body.customerphone,
     customeraddress: req.body.customeraddress,
+    orderitem:req.body.orderitem,
+    productname: req.body.productname,
+    category: req.body.category,
+    price: req.body.price,
+    quantity : req.body.quantity,
+    totalprice : req.body.totalprice,
+    totalamount: req.body.totalamount,
+    customerid:req.body.customerid,
+    // userId:result.id
   });
 
-  customer
+  order
     .save()
     .then((customer) => {
       res.json({
-        message: "Customer Manually Added Successfully !",
+        message: "Order Manually Created Successfully !",
       });
     })
     .catch((error) => {
@@ -28,8 +40,8 @@ const addcustomer = (req, res, next) => {
     });
 };
 
-const showcustomer = (req, res, next) => {
-  Customer.find()
+const showorder = (req, res, next) => {
+  Order.find()
     .then((response) => {
       res.json({
         response,
@@ -44,6 +56,6 @@ const showcustomer = (req, res, next) => {
 
 
 module.exports = {
-  addcustomer,
-  showcustomer
+    addorder,
+    showorder
 };

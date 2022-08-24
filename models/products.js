@@ -3,16 +3,20 @@ const Schema = mongoose.Schema
 
 const ProductSchema = new Schema({
     name :{
-        type : String
+        type : String,
+        required:true
     },
     desc :{
-        type : String
+        type : String,
+        required:true
     },
     category :{
         type : String,
+        required:true
     },
      price :{
-        type : String
+        type : Number,
+        required:true
     },
     userId:{
         type:mongoose.Schema.Types.ObjectId,       //To store id of user

@@ -11,6 +11,7 @@ const cors=require("cors");
 const AuthRoute = require('./routes/auth')
 const AddprodRoute = require('./routes/prodauth')
 const CustomerController = require('./routes/customerauth')
+const OrderController = require('./routes/orderauth')
 
 mongoose.connect("mongodb://localhost:27017/storeapi", {useNewUrlParser: true,
 useUnifiedTopology: true,})
@@ -40,8 +41,6 @@ app.listen(PORT, () => {
   app.use('/api',AuthRoute)
   app.use('/prodapi',AddprodRoute)
   app.use('/customerapi',CustomerController)
+  app.use('/orderapi',OrderController)
 
 
-  let arr = [{ id: 1, username: 'fred' }, { id: 2, username: 'bill' }, { id: 3, username: 'ted' }];
-  let found = arr.some(ele => ele.username === 'bdill');
-  console.log("found",found)

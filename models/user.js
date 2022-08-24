@@ -6,21 +6,26 @@ const expressValidator = require('express-validator')
 
 const UserSchema = new Schema({
     fname :{
-        type : String
+        type : String,
+        required:true
     },
     lname :{
-        type : String
+        type : String,
+        required:true
     },
     email :{
         type : String,
-        // required:[true,"Email already exists"],
-        // unique:true
+        required:[true,"Email already exists"],
+        unique:true
     },
     phone :{
-        type : String
+        type : Number,
+        required:[true,"Number already exists"],
+        unique:true
     },
     password :{
-        type : String
+        type : String,
+        required:true
     }
 },{timestamps:true})
 

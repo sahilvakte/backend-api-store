@@ -73,7 +73,7 @@ const register = (req, res, next) => {
                 token,
               });
             } else {
-              res.json({
+              res.status(500).json({
                 message: "Password does not matched !",
               });
             }
