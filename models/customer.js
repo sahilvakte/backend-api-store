@@ -20,8 +20,8 @@ const CustomerSchema = new Schema(
       unique: true,
     },
     customerphone: {
-      type: Number,
-      required: [true, "Email already exists"],
+      type: String,
+      required: [true, "Number already exists"],
       unique: true,
       min: [10, "Number Should be of 10 Digits"],
       max: [10, "Number Should be of 10 Digits"],

@@ -7,11 +7,11 @@ const expressValidator = require('express-validator')
 const UserSchema = new Schema({
     fname :{
         type : String,
-        required:true
+        // required:true
     },
     lname :{
         type : String,
-        required:true
+        // required:true
     },
     email :{
         type : String,
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
         unique:true
     },
     phone :{
-        type : Number,
+        type : String,
         required:[true,"Number already exists"],
         unique:true
     },

@@ -35,7 +35,7 @@ const OrderSchema = new Schema(
           required:true
         },
         price: {
-          type: Float,
+          type: Number,
           required:true
         },
         qty: {
@@ -45,7 +45,7 @@ const OrderSchema = new Schema(
       },
     ],
     totalamount: {
-      type: Float,
+      type: Number,
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId, //To store id of user
