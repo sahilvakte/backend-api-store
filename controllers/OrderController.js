@@ -1,27 +1,23 @@
 const Order = require("../models/orderModel");
 const bcrypt = require("bcryptjs");
 
-
 // REGISTRATION
 
 const addorder = (req, res, next) => {
-
-  
- 
   let order = new Order({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     customeremail: req.body.customeremail,
     customerphone: req.body.customerphone,
     customeraddress: req.body.customeraddress,
-    orderitem:req.body.orderitem,
+    orderitem: req.body.orderitem,
     productname: req.body.productname,
     category: req.body.category,
     price: req.body.price,
-    quantity : req.body.quantity,
-    totalprice : req.body.totalprice,
+    quantity: req.body.quantity,
+    totalprice: req.body.totalprice,
     totalamount: req.body.totalamount,
-    customerid:req.body.customerid,
+    customerid: req.body.customerid,
     // userId:result.id
   });
 
@@ -54,8 +50,7 @@ const showorder = (req, res, next) => {
     });
 };
 
-
 module.exports = {
-    addorder,
-    showorder
+  addorder,
+  showorder,
 };

@@ -17,7 +17,7 @@ const addproducts = (req, res, next) => {
         desc: req.body.desc,
         category: req.body.category,
         price: req.body.price,
-        userId:result.id
+        userId: result.id,
       });
 
       products

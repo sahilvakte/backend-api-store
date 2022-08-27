@@ -12,6 +12,7 @@ const AuthRoute = require('./routes/auth')
 const AddprodRoute = require('./routes/prodauth')
 const CustomerController = require('./routes/customerauth')
 const OrderController = require('./routes/orderauth')
+const GoogleLoginCOntroller = require('./routes/googleauth')
 
 mongoose.connect("mongodb://localhost:27017/storeapi", {useNewUrlParser: true,
 useUnifiedTopology: true,})
@@ -42,5 +43,6 @@ app.listen(PORT, () => {
   app.use('/prodapi',AddprodRoute)
   app.use('/customerapi',CustomerController)
   app.use('/orderapi',OrderController)
+  app.use('/googleauthapi',GoogleLoginCOntroller)
 
 
